@@ -20,7 +20,8 @@ log = logging.getLogger(__name__)
 ENV = os.environ.get("ENV", "dev")
 FRONTEND_BUILD_DIR = os.environ.get("FRONTEND_BUILD_DIR", "../build")
 # Restrict CORS in production; default to localhost for safer local dev
-CORS_ALLOW_ORIGIN = os.environ.get("CORS_ALLOW_ORIGIN", "http://localhost:3000")
+# Note: changed default port to 5173 to match Vite's default dev server port
+CORS_ALLOW_ORIGIN = os.environ.get("CORS_ALLOW_ORIGIN", "http://localhost:5173")
 
 
 @asynccontextmanager
