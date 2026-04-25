@@ -19,7 +19,8 @@ log = logging.getLogger(__name__)
 # Environment configuration
 ENV = os.environ.get("ENV", "dev")
 FRONTEND_BUILD_DIR = os.environ.get("FRONTEND_BUILD_DIR", "../build")
-CORS_ALLOW_ORIGIN = os.environ.get("CORS_ALLOW_ORIGIN", "*")
+# Restrict CORS in production; default to localhost for safer local dev
+CORS_ALLOW_ORIGIN = os.environ.get("CORS_ALLOW_ORIGIN", "http://localhost:3000")
 
 
 @asynccontextmanager
